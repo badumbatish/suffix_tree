@@ -1,5 +1,5 @@
 #include <iostream>
-#include "temp.h"
+#include "suffix_tree.h"
 void YN(bool b) {
 	if(b==true) std::cout << "Yes" << std::endl;
 	else std::cout << "No" << std::endl;
