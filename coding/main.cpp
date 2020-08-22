@@ -6,6 +6,11 @@ void YN(bool b) {
 }
 
 int main() {
-	std::cout << "Yes" << std::endl;
+	suffix_tree t;
+	//std::string str;
+	//t.build_trie(str);
+	//YN(t.search("bananas$"));
+
+	
 	return 0;
 }
