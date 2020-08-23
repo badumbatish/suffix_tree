@@ -31,6 +31,7 @@ bool suffix_tree::search(const std::string& str,size_t start, size_t end) {
 		if(link->mp[str[i]]==nullptr) return false;
 		link=link->mp[str[i]];
 	}
+    std::cout << i << std::endl;
     if(!(link->start==0 && link->length==0)) {
         return true;
     }
@@ -38,13 +39,15 @@ bool suffix_tree::search(const std::string& str,size_t start, size_t end) {
 }
 
 void suffix_tree::build_trie(const std::string& str) {
-    for(size_t i=0;i<str.length()-1;i++) {
+    for(size_t i=0;i<str.length();i++) {
+        //std::cout << i << " " << str.length() << std::endl;
         insert(str,i,str.length());
     }
     return;
 }
 
 void suffix_tree::build_tree(const std::string& str) {
+    this->str=str;
     build_trie(str);
     std::stack<sf_node*> s;
     find_branch(root,s);
@@ -53,46 +56,52 @@ void suffix_tree::build_tree(const std::string& str) {
 }
 
 void suffix_tree::compress_trie(std::stack<sf_node*>& s) {
-    sf_node* link = s.top();
-    s.pop();
-    for(auto i : link->mp) {
-        reduce(i.second);
+    std::cout << s.size() << std::endl;
+    sf_node* link;
+    while(!s.empty()) {
+        link = s.top();
+        s.pop();
+        // link is a, an(a), n(a)
+        //std::cout << link->mp.begin()->first << std::endl;
+        for(auto it=link->mp.begin();it!=link->mp.end();it++) {
+            reduce(it->second);
+        }
     }
+
 }
 
 void suffix_tree::find_branch(sf_node* head, std::stack<sf_node*>& s) {
-    if(head->mp.size() > 1 ) s.push(head);
+    if(head->mp.size() > 1) s.push(head);
     for(auto i : head->mp) {
         find_branch(i.second,s);
     }
 }
 
-void suffix_tree::reduce(sf_node* head) {
+void suffix_tree::reduce(sf_node* &head) {
     sf_node* link = head; 
     std::stack<sf_node*>  s;
-    while(link->mp.size() != 1 ) {
+    while(link->mp.size() == 1 ) {
         link=link->mp.begin()->second;
         s.push(link);
     }
-    if(s.empty()) return;
-    sf_node* tail;
     
+    
+    if(s.empty()) return;
+    //s.pop();
+    sf_node* tail;
+    if(s.empty()) return;
     tail = s.top(); 
     s.pop();
-
-
-
-    // Ensure to have head and tail
-    // Release memory of nodes
     if(s.empty()) return;
+    link= s.top();
+    s.pop();
+    link->mp.begin()->second=nullptr;
 
     sf_node* dummyNode;
-    while(!s.empty()) {
-        dummyNode = s.top(); s.pop();
-        delete dummyNode;
-    }
-
+    
+    
+    delete head;
     // Connect link and tail together
-    head->mp.begin()->second = tail;
+    head= tail;
     return;
 }

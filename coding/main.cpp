@@ -7,10 +7,21 @@ void YN(bool b) {
 
 int main() {
 	suffix_tree t;
-	//std::string str;
-	//t.build_trie(str);
-	//YN(t.search("bananas$"));
-
-	
+	std::string str="panamabananas$";
+	t.build_tree(str);
+	std::string temp="";
+	t.dfs(t.root,temp);
+	/*
+	std::stack<sf_node*> s;
+	t.find_branch(t.root,s);
+	while(!s.empty()) {
+		sf_node* link = s.top();
+		s.pop();
+		for(auto i : link->mp ) {
+			std::cout << i.first <<  " ";
+		}
+		std::cout << std::endl;
+	}
+	*/
 	return 0;
 }
