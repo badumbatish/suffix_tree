@@ -56,7 +56,7 @@ void suffix_tree::build_tree(const std::string& str) {
 }
 
 void suffix_tree::compress_trie(std::stack<sf_node*>& s) {
-    std::cout << s.size() << std::endl;
+    //std::cout << s.size() << std::endl;
     sf_node* link;
     while(!s.empty()) {
         link = s.top();
@@ -76,6 +76,38 @@ void suffix_tree::find_branch(sf_node* head, std::stack<sf_node*>& s) {
         find_branch(i.second,s);
     }
 }
+
+bool suffix_tree::search2(const std::string& str) {
+    size_t i=0;
+    sf_node* link=root;
+    sf_node* prev = link;
+    while(i<str.length()) {
+        for(;;) {
+            if(!i<str.length()) return true;
+
+            if(link->mp[str[i]]) {
+                prev=link;
+                link=link->mp[str[i]];
+                i++;
+            }
+            else break;
+        }
+        if(prev->mp.empty()) return false;
+        else {
+            size_t start=link->mp.begin()->second->start;
+            size_t length=link->mp.begin()->second->length;
+            for(;i<str.length() && start<start+length;) {
+                if(str[i]==this->str[start]) {
+                    start++;
+                    i++;
+                }
+                else return false;
+            }
+        }
+    }
+    return true;
+}
+
 
 void suffix_tree::reduce(sf_node* &head) {
     sf_node* link = head; 
@@ -97,7 +129,6 @@ void suffix_tree::reduce(sf_node* &head) {
     s.pop();
     link->mp.begin()->second=nullptr;
 
-    sf_node* dummyNode;
     
     
     delete head;

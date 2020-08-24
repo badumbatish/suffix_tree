@@ -1,38 +1,84 @@
-==46679== Memcheck, a memory error detector
-==46679== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==46679== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==46679== Command: ./final.o
-==46679== Parent PID: 46678
-==46679== 
-==46679== Conditional jump or move depends on uninitialised value(s)
-==46679==    at 0x10E10F: suffix_tree::dfs(sf_node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (suffix_tree.h:49)
-==46679==    by 0x10DF0C: main (main.cpp:15)
-==46679== 
-==46679== Conditional jump or move depends on uninitialised value(s)
-==46679==    at 0x10E10F: suffix_tree::dfs(sf_node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (suffix_tree.h:49)
-==46679==    by 0x10E149: suffix_tree::dfs(sf_node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (suffix_tree.h:52)
-==46679==    by 0x10DF0C: main (main.cpp:15)
-==46679== 
-==46679== Conditional jump or move depends on uninitialised value(s)
-==46679==    at 0x10E10F: suffix_tree::dfs(sf_node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (suffix_tree.h:49)
-==46679==    by 0x10E149: suffix_tree::dfs(sf_node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (suffix_tree.h:52)
-==46679==    by 0x10E149: suffix_tree::dfs(sf_node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (suffix_tree.h:52)
-==46679==    by 0x10DF0C: main (main.cpp:15)
-==46679== 
-==46679== Conditional jump or move depends on uninitialised value(s)
-==46679==    at 0x10E10F: suffix_tree::dfs(sf_node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (suffix_tree.h:49)
-==46679==    by 0x10E149: suffix_tree::dfs(sf_node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (suffix_tree.h:52)
-==46679==    by 0x10E149: suffix_tree::dfs(sf_node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (suffix_tree.h:52)
-==46679==    by 0x10E149: suffix_tree::dfs(sf_node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (suffix_tree.h:52)
-==46679==    by 0x10DF0C: main (main.cpp:15)
-==46679== 
-==46679== 
-==46679== HEAP SUMMARY:
-==46679==     in use at exit: 0 bytes in 0 blocks
-==46679==   total heap usage: 209 allocs, 209 frees, 90,432 bytes allocated
-==46679== 
-==46679== All heap blocks were freed -- no leaks are possible
-==46679== 
-==46679== Use --track-origins=yes to see where uninitialised values come from
-==46679== For lists of detected and suppressed errors, rerun with: -s
-==46679== ERROR SUMMARY: 44 errors from 4 contexts (suppressed: 0 from 0)
+==14981== Memcheck, a memory error detector
+==14981== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==14981== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==14981== Command: ./final.o
+==14981== Parent PID: 14980
+==14981== 
+==14981== Conditional jump or move depends on uninitialised value(s)
+==14981==    at 0x10E377: suffix_tree::dfs(sf_node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (suffix_tree.h:50)
+==14981==    by 0x10E104: main (main.cpp:16)
+==14981== 
+==14981== Conditional jump or move depends on uninitialised value(s)
+==14981==    at 0x10E384: suffix_tree::dfs(sf_node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (suffix_tree.h:50)
+==14981==    by 0x10E104: main (main.cpp:16)
+==14981== 
+==14981== Conditional jump or move depends on uninitialised value(s)
+==14981==    at 0x10E377: suffix_tree::dfs(sf_node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (suffix_tree.h:50)
+==14981==    by 0x10E3C0: suffix_tree::dfs(sf_node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (suffix_tree.h:54)
+==14981==    by 0x10E104: main (main.cpp:16)
+==14981== 
+==14981== Conditional jump or move depends on uninitialised value(s)
+==14981==    at 0x10E384: suffix_tree::dfs(sf_node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (suffix_tree.h:50)
+==14981==    by 0x10E3C0: suffix_tree::dfs(sf_node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (suffix_tree.h:54)
+==14981==    by 0x10E104: main (main.cpp:16)
+==14981== 
+==14981== Conditional jump or move depends on uninitialised value(s)
+==14981==    at 0x10E377: suffix_tree::dfs(sf_node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (suffix_tree.h:50)
+==14981==    by 0x10E3C0: suffix_tree::dfs(sf_node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (suffix_tree.h:54)
+==14981==    by 0x10E3C0: suffix_tree::dfs(sf_node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (suffix_tree.h:54)
+==14981==    by 0x10E104: main (main.cpp:16)
+==14981== 
+==14981== Conditional jump or move depends on uninitialised value(s)
+==14981==    at 0x10E384: suffix_tree::dfs(sf_node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (suffix_tree.h:50)
+==14981==    by 0x10E3C0: suffix_tree::dfs(sf_node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (suffix_tree.h:54)
+==14981==    by 0x10E3C0: suffix_tree::dfs(sf_node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (suffix_tree.h:54)
+==14981==    by 0x10E104: main (main.cpp:16)
+==14981== 
+==14981== Conditional jump or move depends on uninitialised value(s)
+==14981==    at 0x10E377: suffix_tree::dfs(sf_node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (suffix_tree.h:50)
+==14981==    by 0x10E3C0: suffix_tree::dfs(sf_node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (suffix_tree.h:54)
+==14981==    by 0x10E3C0: suffix_tree::dfs(sf_node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (suffix_tree.h:54)
+==14981==    by 0x10E3C0: suffix_tree::dfs(sf_node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (suffix_tree.h:54)
+==14981==    by 0x10E104: main (main.cpp:16)
+==14981== 
+==14981== Conditional jump or move depends on uninitialised value(s)
+==14981==    at 0x10E384: suffix_tree::dfs(sf_node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (suffix_tree.h:50)
+==14981==    by 0x10E3C0: suffix_tree::dfs(sf_node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (suffix_tree.h:54)
+==14981==    by 0x10E3C0: suffix_tree::dfs(sf_node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (suffix_tree.h:54)
+==14981==    by 0x10E3C0: suffix_tree::dfs(sf_node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (suffix_tree.h:54)
+==14981==    by 0x10E104: main (main.cpp:16)
+==14981== 
+==14981== Invalid read of size 8
+==14981==    at 0x10E368: suffix_tree::dfs(sf_node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (suffix_tree.h:50)
+==14981==    by 0x10E3C0: suffix_tree::dfs(sf_node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (suffix_tree.h:54)
+==14981==    by 0x10E104: main (main.cpp:16)
+==14981==  Address 0x30 is not stack'd, malloc'd or (recently) free'd
+==14981== 
+==14981== 
+==14981== Process terminating with default action of signal 11 (SIGSEGV)
+==14981==  Access not within mapped region at address 0x30
+==14981==    at 0x10E368: suffix_tree::dfs(sf_node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (suffix_tree.h:50)
+==14981==    by 0x10E3C0: suffix_tree::dfs(sf_node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (suffix_tree.h:54)
+==14981==    by 0x10E104: main (main.cpp:16)
+==14981==  If you believe this happened as a result of a stack
+==14981==  overflow in your program's main thread (unlikely but
+==14981==  possible), you can try to increase the size of the
+==14981==  main thread stack using the --main-stacksize= flag.
+==14981==  The main thread stack size used in this run was 8388608.
+==14981== 
+==14981== HEAP SUMMARY:
+==14981==     in use at exit: 2,688 bytes in 48 blocks
+==14981==   total heap usage: 224 allocs, 176 frees, 94,512 bytes allocated
+==14981== 
+==14981== LEAK SUMMARY:
+==14981==    definitely lost: 0 bytes in 0 blocks
+==14981==    indirectly lost: 0 bytes in 0 blocks
+==14981==      possibly lost: 0 bytes in 0 blocks
+==14981==    still reachable: 2,688 bytes in 48 blocks
+==14981==         suppressed: 0 bytes in 0 blocks
+==14981== Reachable blocks (those to which a pointer was found) are not shown.
+==14981== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==14981== 
+==14981== Use --track-origins=yes to see where uninitialised values come from
+==14981== For lists of detected and suppressed errors, rerun with: -s
+==14981== ERROR SUMMARY: 11 errors from 9 contexts (suppressed: 0 from 0)

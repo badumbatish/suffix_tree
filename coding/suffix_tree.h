@@ -48,8 +48,8 @@ public:
             //std::cout << it->first << std::endl;
             str.push_back(it.first);
             if(!(it.second->start == it.second->length && it.second->start==0)) {
-                print(this->str,it.second->start,it.second->length);
-                //std::cout << str << " " << it.second->start << " " << it.second->length << " ";
+                //print(this->str,it.second->start,it.second->length);
+                std::cout << str << " ";
             }
             dfs(it.second,str);
             str.pop_back();
